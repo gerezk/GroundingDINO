@@ -175,7 +175,7 @@ cd GroundingDINO/
 3. Install the required dependencies in the current directory.
 
 ```bash
-pip install -e .
+pip install -e . --no-build-isolation
 ```
 
 4. Download pre-trained model weights.
@@ -215,6 +215,20 @@ CUDA_VISIBLE_DEVICES={GPU ID} python demo/inference_on_a_image.py \
 --token_spans "[[[9, 10], [11, 14]], [[19, 20], [21, 24]]]"
  [--cpu-only] # open it for cpu mode
 ```
+
+For the cpu version:
+
+```bash
+python demo/inference_on_a_image.py \
+-c groundingdino/config/GroundingDINO_SwinT_OGC.py \
+-p weights/groundingdino_swint_ogc.pth \
+-i .asset/cat_dog.jpeg \
+-o logs/1111 \
+-t "There is a cat and a dog in the image ." \
+--token_spans "[[[9, 10], [11, 14]], [[19, 20], [21, 24]]]" \
+--cpu-only
+```
+
 The token_spans specify the start and end positions of a phrases. For example, the first phrase is `[[9, 10], [11, 14]]`. `"There is a cat and a dog in the image ."[9:10] = 'a'`, `"There is a cat and a dog in the image ."[11:14] = 'cat'`. Hence it refers to the phrase `a cat` . Similarly, the `[[19, 20], [21, 24]]` refers to the phrase `a dog`.
 
 See the `demo/inference_on_a_image.py` for more details.
