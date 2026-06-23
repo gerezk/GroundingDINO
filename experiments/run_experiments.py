@@ -7,8 +7,8 @@ from groundingdino.util.inference import load_image, load_model, predict
 
 CONFIG_FILE = "./groundingdino/config/GroundingDINO_SwinT_OGC.py"
 CHECKPOINT_PATH = "./weights/groundingdino_swint_ogc.pth"
-DATASET_DIR_SINGLE_OBJECTS = "./experiments/dataset/single_object"
-DATASET_DIR_MULTIPLE_OBJECTS = "./experiments/dataset/multi_object"
+DATASET_DIR_SINGLE_OBJECTS = "dataset/single_object"
+DATASET_DIR_MULTIPLE_OBJECTS = "dataset/multi_object"
 
 PROMPT_HIERARCHY_EXPERIMENT_1 = {
     "dog": ["dog", "animal", "mammal", "living thing"],

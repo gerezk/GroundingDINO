@@ -1,4 +1,5 @@
 weights/
+experiments/dataset
 
 # IDE
 .idea/

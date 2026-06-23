@@ -5,7 +5,7 @@ import fiftyone as fo
 import fiftyone.zoo as foz
 import numpy as np
 
-EXPORT_DIR = "./experiments/dataset"
+EXPORT_DIR = "dataset"
 LABEL_FIELD = "ground_truth"
 DATASET_TYPE = fo.types.COCODetectionDataset
 CLASSES = ["dog", "cat", "bird", "car", "bicycle", "chair", "apple"]
