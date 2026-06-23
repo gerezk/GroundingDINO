@@ -1,7 +1,3 @@
-<div align="center">
-  <img src="./.asset/grounding_dino_logo.png" width="30%">
-</div>
-
 # 🦕 Grounding DINO 
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/grounding-dino-marrying-dino-with-grounded/zero-shot-object-detection-on-mscoco)](https://paperswithcode.com/sota/zero-shot-object-detection-on-mscoco?p=grounding-dino-marrying-dino-with-grounded) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/grounding-dino-marrying-dino-with-grounded/zero-shot-object-detection-on-odinw)](https://paperswithcode.com/sota/zero-shot-object-detection-on-odinw?p=grounding-dino-marrying-dino-with-grounded) \
@@ -93,7 +89,9 @@ if the output is /usr/local/cuda/bin/nvcc, then:
 ```bash
 export CUDA_HOME=/usr/local/cuda
 ```
-**Installation:**
+**Installation and Setup:**
+
+Note that experiments were run using Python 3.9.
 
 1. Change the current directory to the GroundingDINO folder.
 
@@ -105,6 +103,7 @@ cd GroundingDINO/
 
 ```bash
 pip install -e . --no-build-isolation
+pip install -r requirements.txt
 ```
 
 3. Download pre-trained model weights.
@@ -115,6 +114,21 @@ cd weights
 wget -q https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth
 cd ..
 ```
+
+4. Download the dataset.
+
+```bash
+cd experiments
+python3 download_dataset.py
+```
+
+5. Run experiments.
+
+```bash
+python3 run_experiments.py
+```
+
+5. Run notebook `experiments/expierments.ipynb`.
 
 ## ❤️ Acknowledgement
 
